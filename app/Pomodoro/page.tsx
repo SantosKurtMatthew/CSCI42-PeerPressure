@@ -7,8 +7,6 @@ export default function Home() {
   return (
     <div className="bg-sky-400">
     <div>Pomodoro Timer</div>
-    <MyButton />
-
     <CountdownTimer />
     </div>
   );

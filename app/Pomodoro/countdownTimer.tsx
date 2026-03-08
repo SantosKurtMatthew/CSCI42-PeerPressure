@@ -75,12 +75,8 @@ export function CountdownTimer(){
 
     return (
         <main>
-            <div>Countdown Timer</div>
             <div>
-                {minutes}
-            </div>
-            <div>
-                {seconds}
+                {minutes} : {seconds}
             </div>
 
             <div>
@@ -90,22 +86,23 @@ export function CountdownTimer(){
                 <input value={restMinutes} onChange={changeRestMinutes} />
             </div>
 
-            {!isRunning && (
-                <button onClick={startFocusTimer}> 
-                    Start Focus Timer 
-                </button>
-            )}
-            {!isRunning && (
-                <button onClick={startRestTimer}> 
-                    Start Rest Timer 
-                </button>
-            )}
+                
+            <button onClick={startFocusTimer}> 
+                Start Focus Timer 
+            </button>
+
+            <button onClick={startRestTimer}> 
+                Start Rest Timer 
+            </button>
+            
             <button onClick={resumeTimer}> 
-                    Resume Timer 
-                </button>
+                Resume Timer 
+            </button>
+
             <button onClick={pauseTimer}> 
                 Pause Timer 
             </button>
+            
             <button onClick={stopTimer}> 
                 Stop Timer 
             </button>
