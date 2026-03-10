@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, use } from "react";
 
 // Helper to generate 30-minute intervals between start and end time
 function generateTimeSlots(startTime: string, endTime: string) {
@@ -27,9 +27,9 @@ function getDatesInRange(startDate: Date, endDate: Date) {
     return dates;
 }
 
-export default function MeetingDetailPage({ params }: { params: { id: string } }) {
-    const meetingId = params.id;
-    const currentUserId = "user_1"; // Mock user ID
+export default function MeetingDetailPage({ params }: { params: Promise<{ id: string }> }) {
+    const { id: meetingId } = use(params);
+    const currentUserId = "user-1"; // Mock user ID
 
     const [meeting, setMeeting] = useState<any>(null);
     const [loading, setLoading] = useState(true);

@@ -1,15 +1,14 @@
 import { NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import prisma from "@/lib/prisma";
 
 // Get meeting details and its availabilities
 export async function GET(
     request: Request,
-    { params }: { params: { id: string } }
+    { params }: { params: Promise<{ id: string }> }
 ) {
     try {
-        const scheduleId = parseInt(params.id);
+        const { id } = await params;
+        const scheduleId = parseInt(id);
         if (isNaN(scheduleId)) {
             return NextResponse.json({ error: "Invalid schedule ID" }, { status: 400 });
         }
@@ -41,10 +40,11 @@ export async function GET(
 // Update or set availabilities for a user
 export async function POST(
     request: Request,
-    { params }: { params: { id: string } }
+    { params }: { params: Promise<{ id: string }> }
 ) {
     try {
-        const scheduleId = parseInt(params.id);
+        const { id } = await params;
+        const scheduleId = parseInt(id);
         if (isNaN(scheduleId)) {
             return NextResponse.json({ error: "Invalid schedule ID" }, { status: 400 });
         }

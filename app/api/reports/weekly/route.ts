@@ -1,12 +1,10 @@
 import { NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import prisma from "@/lib/prisma";
 
 export async function GET(request: Request) {
     try {
         // In a real app we'd get this from session
-        const userId = "user_1";
+        const userId = "user-1";
 
         // Calculate dates for current week
         const today = new Date();

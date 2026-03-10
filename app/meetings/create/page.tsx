@@ -17,7 +17,7 @@ export default function MeetingCreatePage() {
         startTime: "09:00",
         endTime: "17:00",
         taskId: "",
-        startedById: "user_1"
+        startedById: "user-1"
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -75,7 +75,7 @@ export default function MeetingCreatePage() {
                         value={formData.meetingName}
                         onChange={handleChange}
                         placeholder="e.g., Sprint Planning, Group Study"
-                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-md text-gray-900 focus:ring-blue-500 focus:border-blue-500"
                     />
                 </div>
 
@@ -87,7 +87,7 @@ export default function MeetingCreatePage() {
                         onChange={handleChange}
                         placeholder="What is this meeting about?"
                         rows={3}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-md text-gray-900 focus:ring-blue-500 focus:border-blue-500"
                     />
                 </div>
 
@@ -100,7 +100,7 @@ export default function MeetingCreatePage() {
                             name="startDate"
                             value={formData.startDate}
                             onChange={handleChange}
-                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                            className="w-full px-4 py-2 border border-gray-300 rounded-md text-gray-900 focus:ring-blue-500 focus:border-blue-500"
                         />
                     </div>
 
@@ -113,7 +113,7 @@ export default function MeetingCreatePage() {
                             value={formData.endDate}
                             onChange={handleChange}
                             min={formData.startDate} // Ensure end date is after start date
-                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                            className="w-full px-4 py-2 border border-gray-300 rounded-md text-gray-900 focus:ring-blue-500 focus:border-blue-500"
                         />
                     </div>
 
@@ -125,7 +125,7 @@ export default function MeetingCreatePage() {
                             name="startTime"
                             value={formData.startTime}
                             onChange={handleChange}
-                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                            className="w-full px-4 py-2 border border-gray-300 rounded-md text-gray-900 focus:ring-blue-500 focus:border-blue-500"
                         />
                         <p className="text-xs text-gray-400 mt-1">When does the day start?</p>
                     </div>
@@ -138,7 +138,7 @@ export default function MeetingCreatePage() {
                             name="endTime"
                             value={formData.endTime}
                             onChange={handleChange}
-                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                            className="w-full px-4 py-2 border border-gray-300 rounded-md text-gray-900 focus:ring-blue-500 focus:border-blue-500"
                         />
                         <p className="text-xs text-gray-400 mt-1">When does the day end?</p>
                     </div>
@@ -152,7 +152,7 @@ export default function MeetingCreatePage() {
                         value={formData.taskId}
                         onChange={handleChange}
                         placeholder="Link to an existing task"
-                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-md text-gray-900 focus:ring-blue-500 focus:border-blue-500"
                     />
                 </div>
 

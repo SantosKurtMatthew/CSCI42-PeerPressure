@@ -1,15 +1,13 @@
 import { NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
-
-// Ensure a single Prisma client instance
-const prisma = new PrismaClient();
+import prisma from "@/lib/prisma";
 
 export async function PUT(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const taskId = parseInt(params.id);
+    const { id } = await params;
+    const taskId = parseInt(id);
     if (isNaN(taskId)) {
       return NextResponse.json({ error: "Invalid task ID" }, { status: 400 });
     }
@@ -51,10 +49,11 @@ export async function PUT(
 
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const taskId = parseInt(params.id);
+    const { id } = await params;
+    const taskId = parseInt(id);
     if (isNaN(taskId)) {
       return NextResponse.json({ error: "Invalid task ID" }, { status: 400 });
     }
