@@ -21,11 +21,11 @@ function Row() {
     return (
         <div className="px-2">
             <table className="table-fixed w-full ">
-                <tr className="text-[#780000] border-b-2 border-gray-700">
-                    <th className="w-1/4 text-left p-2 border-r-2 border-gray-700">Sample Name</th>
-                    <th className="w-1/6 text-left p-2 border-r-2 border-gray-700">Sample Progress</th>
-                    <th className="w-1/5 text-left p-2 border-r-2 border-gray-700">March 13, 2026</th>
-                    <th className="w-1/5 text-left p-2 border-r-2 border-gray-700">March 13, 2026</th>
+                <tr className="text-[#780000] border-b border-gray-700">
+                    <th className="w-1/4 text-left p-2 border-r border-gray-700">Sample Name</th>
+                    <th className="w-1/6 text-left p-2 border-r border-gray-700">Sample Progress</th>
+                    <th className="w-1/5 text-left p-2 border-r border-gray-700">March 13, 2026</th>
+                    <th className="w-1/5 text-left p-2 border-r border-gray-700">March 13, 2026</th>
                     <th className="w-1/6 text-left p-2 ">No Tags Attached</th>
                 </tr>
             </table>
@@ -47,6 +47,8 @@ function Main() {
             </div>
             <div className="pb-2">
                 <Header />
+                <Row />
+                <Row />
                 <Row />
                 <Row />
             </div>
